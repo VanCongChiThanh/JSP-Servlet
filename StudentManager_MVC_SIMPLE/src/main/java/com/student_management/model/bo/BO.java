@@ -12,16 +12,16 @@ public class BO {
         this.dao = new DAO();
     }
 
-    public boolean addStudent(String id, String name, String address, String faculty) {
-        return dao.addStudent(id, name, address, faculty);
+    public boolean addStudent(String id, String name, String age, String faculty) {
+        return dao.addStudent(id, name, age, faculty);
     }
 
     public Student getStudentById(String id) {
         return dao.getStudentById(id);
     }
 
-    public boolean updateStudent(String id, String name, String address, String faculty) {
-        return dao.updateStudent(id, name, address, faculty);
+    public boolean updateStudent(String id, String name, String age, String faculty) {
+        return dao.updateStudent(id, name, age, faculty);
     }
 
     public boolean deleteStudent(String id) {

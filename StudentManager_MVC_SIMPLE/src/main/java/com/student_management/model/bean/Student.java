@@ -3,13 +3,13 @@ package com.student_management.model.bean;
 public class Student {
     private String id;
     private String name;
-    private String address;
+    private String age;
     private String faculty;
 
-    public Student(String id, String name, String address, String faculty) {
+    public Student(String id, String name, String age, String faculty) {
         this.id = id;
         this.name = name;
-        this.address = address;
+        this.age = age;
         this.faculty = faculty;
     }
 
@@ -29,12 +29,12 @@ public class Student {
         this.faculty = faculty;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAge() {
+        return age;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getName() {

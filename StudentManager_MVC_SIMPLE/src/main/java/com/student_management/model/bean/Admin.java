@@ -1,5 +1,7 @@
 package com.student_management.model.bean;
 
+import com.student_management.model.dao.DAO;
+
 public class Admin {
     private String username;
     private String password;
