@@ -164,8 +164,8 @@
             <td><%=sv.getName()%></td>
             <td><%=sv.getAge()%></td>
             <td><%=sv.getFaculty()%></td>
-            <td><a href="editStudent.jsp?mssv=<%=sv.getId()%>">Edit</a></td>
-            <td><a href="deleteStudentServlet?mssv=<%=sv.getId()%>">Delete</a></td>
+            <td><a href="editStudent.jsp?id=<%=sv.getId()%>">Edit</a></td>
+            <td><a href="deleteStudentServlet?id=<%=sv.getId()%>">Delete</a></td>
         </tr>
         <%
             }
