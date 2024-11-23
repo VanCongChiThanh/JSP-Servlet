@@ -46,13 +46,13 @@ public class DAO {
         return false;
     }
 
-    public boolean addStudent(String id, String name, String age, String faculty) {
+    public boolean addStudent(String id, String name, int age, String faculty) {
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(
                 "INSERT INTO studentmanagement.student VALUES (?, ?, ?, ?)")) {
 
             preparedStatement.setString(1, id);
             preparedStatement.setString(2, name);
-            preparedStatement.setString(3, age);
+            preparedStatement.setInt(3, age);
             preparedStatement.setString(4, faculty);
 
             return preparedStatement.executeUpdate() > 0;
@@ -74,7 +74,7 @@ public class DAO {
             while (resultSet.next()) {
                 String id = resultSet.getString("id");
                 String name = resultSet.getString("name");
-                String age = resultSet.getString("age");
+                int age = resultSet.getInt("age");
                 String faculty = resultSet.getString("faculty");
 
                 students.add(new Student(id, name, age, faculty));
@@ -97,7 +97,7 @@ public class DAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 String name = resultSet.getString("name");
-                String age = resultSet.getString("age");
+                int age = resultSet.getInt("age");
                 String faculty = resultSet.getString("faculty");
 
                 return new Student(id, name, age, faculty);
@@ -111,12 +111,12 @@ public class DAO {
         return null;
     }
 
-    public boolean updateStudent(String id, String name, String age, String faculty) {
+    public boolean updateStudent(String id, String name, int age, String faculty) {
         try (PreparedStatement preparedStatement = databaseConnection.prepareStatement(
                 "UPDATE studentmanagement.student SET name = ?, age = ?, faculty = ? WHERE id = ?")) {
 
             preparedStatement.setString(1, name);
-            preparedStatement.setString(2, age);
+            preparedStatement.setInt(2, age);
             preparedStatement.setString(3, faculty);
             preparedStatement.setString(4, id);
 

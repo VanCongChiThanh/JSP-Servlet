@@ -3,10 +3,10 @@ package com.student_management.model.bean;
 public class Student {
     private String id;
     private String name;
-    private String age;
+    private int age;
     private String faculty;
 
-    public Student(String id, String name, String age, String faculty) {
+    public Student(String id, String name, int age, String faculty) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -29,11 +29,11 @@ public class Student {
         this.faculty = faculty;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

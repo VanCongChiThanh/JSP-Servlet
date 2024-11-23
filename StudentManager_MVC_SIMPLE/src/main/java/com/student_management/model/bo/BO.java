@@ -12,7 +12,7 @@ public class BO {
         this.dao = new DAO();
     }
 
-    public boolean addStudent(String id, String name, String age, String faculty) {
+    public boolean addStudent(String id, String name, int age, String faculty) {
         return dao.addStudent(id, name, age, faculty);
     }
 
@@ -20,7 +20,7 @@ public class BO {
         return dao.getStudentById(id);
     }
 
-    public boolean updateStudent(String id, String name, String age, String faculty) {
+    public boolean updateStudent(String id, String name, int age, String faculty) {
         return dao.updateStudent(id, name, age, faculty);
     }
 

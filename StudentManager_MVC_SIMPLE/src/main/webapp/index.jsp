@@ -52,12 +52,26 @@
         input[type="submit"]:hover, input[type="reset"]:hover {
             background-color: #0056b3;
         }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 <h1>Đăng nhập hệ thống</h1>
 <hr>
+
 <form action="CheckLoginServlet" method="POST">
+    <%
+        String error = (String) request.getAttribute("error");
+        if (error != null) {
+    %>
+    <div class="error"><%= error %></div>
+    <%
+        }
+    %>
     <label for="input-name">Tên đăng nhập:</label>
     <input id="input-name" type="text" name="username"><br>
 
