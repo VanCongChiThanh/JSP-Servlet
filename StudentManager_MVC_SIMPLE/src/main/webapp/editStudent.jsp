@@ -111,7 +111,6 @@
     function validateForm() {
         let isValid = true;
 
-        // Clear previous errors
         document.getElementById("nameError").textContent = "";
         document.getElementById("ageError").textContent = "";
         document.getElementById("facultyError").textContent = "";
@@ -126,7 +125,6 @@
             isValid = false;
         }
 
-        // Validate age
         if (age === "") {
             document.getElementById("ageError").textContent = "Tuổi không được để trống.";
             isValid = false;
@@ -135,12 +133,10 @@
             isValid = false;
         }
 
-        // Validate faculty
         if (faculty === "") {
             document.getElementById("facultyError").textContent = "Khoa không được để trống.";
             isValid = false;
         }
-
         return isValid;
     }
 </script>

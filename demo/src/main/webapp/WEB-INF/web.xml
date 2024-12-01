@@ -1,0 +1,21 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Welcome-file -->
+    <welcome-file-list>
+        <welcome-file>login</welcome-file>
+    </welcome-file-list>
+
+    <!-- Ánh xạ JSP -->
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <jsp-file>/mvc_example/login.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+</web-app>
