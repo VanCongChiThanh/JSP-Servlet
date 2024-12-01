@@ -1,3 +1,5 @@
+<%@ page import="com.qlpb.model.bean.Department" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -73,9 +75,12 @@
             <label for="departmentID">Phòng Ban:</label>
             <select id="departmentID" name="departmentID" required>
                 <option value="" disabled selected>Chọn phòng ban</option>
-                <option value="PB01">Phòng Ban 1</option>
-                <option value="PB02">Phòng Ban 2</option>
-                <option value="PB03">Phòng Ban 3</option>
+                <%
+                    List<Department> departments = (List<Department>) request.getAttribute("departments");
+                    for (Department department : departments) {
+                %>
+                <option value="<%= department.getId() %>"><%= department.getName() %></option>
+                <% } %>
             </select>
         </div>
         <div class="form-group">

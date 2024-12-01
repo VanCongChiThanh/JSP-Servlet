@@ -40,7 +40,7 @@
 <h1>Cập nhật phòng ban</h1>
 
 <form action="departments?action=update" method="post">
-    <input type="hidden" name="id" value="${department.id}"> <!-- ID phòng ban -->
+    <input type="text" name="id" value="${department.id}" readonly>
 
     <div>
         <label for="name">Tên phòng ban:</label>

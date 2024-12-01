@@ -1,6 +1,8 @@
 package com.qlpb.controller;
 
+import com.qlpb.model.bean.Department;
 import com.qlpb.model.bean.Employee;
+import com.qlpb.model.bo.DepartmentBO;
 import com.qlpb.model.bo.EmployeeBO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,9 +16,11 @@ import java.util.List;
 @WebServlet("/employees")
 public class EmployeeServlet extends HttpServlet {
     private EmployeeBO employeeBO;
+    private DepartmentBO departmentBO;
 
     public EmployeeServlet() {
         employeeBO = new EmployeeBO();
+        departmentBO = new DepartmentBO();
     }
 
     @Override
@@ -88,6 +92,8 @@ public class EmployeeServlet extends HttpServlet {
         String id=request.getParameter("id");
         Employee employee=employeeBO.getEmployeeById(id);
         request.setAttribute("employee", employee);
+        List<Department> departments=departmentBO.getAllDepartments();
+        request.setAttribute("departments", departments);
         try {
             request.getRequestDispatcher("editEmployee.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
@@ -114,6 +120,8 @@ public class EmployeeServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             System.out.println("Forwarding to addEmployee.jsp");
+            List<Department> departments=departmentBO.getAllDepartments();
+            request.setAttribute("departments", departments);
             request.getRequestDispatcher("addEmployee.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
